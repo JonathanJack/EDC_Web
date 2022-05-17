@@ -46,11 +46,11 @@
                  </div>
         </div> 
 
-        <!--
-        <select  v-model="selected" @change="onChange($event)">
-            <option  v-for="location in locations" :key="location.key">{{location.nome}}</option>        
-        </select>
-        -->   
+       
+        <!-- <select @change="onChange(getWeather(location.name))">
+            <option  v-for="location in locations" :key="location.name" :value="location.name">{{location.name}}</option>        
+        </select> -->
+       
     </div>
      
 </template>
@@ -63,27 +63,30 @@ export default{
         },                                                        
         data() {
             return{                             
-                infoLocal: []                                                              
+                infoLocal: []
+                // locations: [
+                //     {name:'Mesquita'},
+                //     {name:'Marechal Hermes'},
+                // ]                                                              
             }                             
         },
-        methods: {                 
-            
+        methods: {                             
             getWeather(local){                      
                 var url = 'http://api.weatherapi.com/v1/current.json?key=7cb2dafb2ba8476484a154218220702&q=' + local;                                          
                 fetch(url)                        
                 .then(res => res.json())
-                .then(res =>{this.infoLocal = res})                    
+                .then(res =>{this.infoLocal = res})                                   
                 .catch(err => console.log(err))                                          
             }
         },
         mounted(){  
-            this.$getLocation([])
+            
+            this.$getLocation()
             .then(coordinates => {
                 
                 this.getWeather(coordinates.lat +',' + coordinates.lng);
                 
-            });                                                                                
-        
+            });                                                                                                 
         //   navigator.geolocation.getCurrentPosition(function(position) {
         //          console.log(String(position.coords.latitude) + String(position.coords.longitude));                
         //     })                                                                         
