@@ -72,7 +72,7 @@ export default{
         },
         methods: {                             
             getWeather(local){                      
-                var url = 'http://api.weatherapi.com/v1/current.json?key=7cb2dafb2ba8476484a154218220702&q=' + local;                                          
+                var url = 'https://api.weatherapi.com/v1/current.json?key=7cb2dafb2ba8476484a154218220702&q=' + local;                                          
                 fetch(url)                        
                 .then(res => res.json())
                 .then(res =>{this.infoLocal = res})                                   
