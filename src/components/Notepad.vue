@@ -1,18 +1,27 @@
 <template>
-    <button v-on:click="saveFile">teste</button>
+<div>
+    <textarea id="notepad"></textarea>
+    <button v-on:click="saveNotepadText">Salvar</button>
+</div>
 </template>
 
 <script>
-import {saveAs} from 'file-saver';
-    FileSaver saveAs(Blob/File/Url, optional DOMString filename, optional Object { autoBom: true });
 
     export default{       
         methods: {
-            saveFile(){
-                var blob = new Blob(["teste"],{type: "text/plain;charset=utf-8"});
-
-                FileSaver.saveAs(blob,"testfile1.txt");
+            saveNotepadText(){
+                let txtNotepad = document.getElementById("notepad").value;
+                localStorage.setItem('notepad',txtNotepad);
+            },
+            readLocalStorage(){
+                let notepad = document.getElementById("notepad");
+                let txtNotepad = localStorage.getItem('notepad');
+                notepad.value = txtNotepad;
             }
+
+        },
+        mounted(){
+            this.readLocalStorage();
         }
     }
 

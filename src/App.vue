@@ -1,8 +1,9 @@
 <template>
   <div id="app" >     
+    <!-- <Mirror/> -->
    <Temperatura/>
   <!-- <Cripto prop-coin='BTC'/> -->
-  <!-- <Notepad/> -->
+  <Notepad/>
    
   </div>
 </template>
@@ -12,13 +13,16 @@
 
 import Temperatura from './components/Temperatura.vue'
   //  import Cripto from './components/Cripto.vue'
-  // import Notepad from './components/Notepad.vue'
+  import Notepad from './components/Notepad.vue'
+  // import Mirror from './components/Mirror.vue'
+
 
 export default {
   name: 'App',
   components: {
-    // Notepad
-    Temperatura
+    Notepad,
+    Temperatura,
+    // Mirror
     // Cripto
   },  
 }

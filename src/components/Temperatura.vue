@@ -79,7 +79,10 @@ export default{
                 .catch(err => console.log(err))                                          
             }
         },
-        mounted(){  
+        beforeCreate(){  
+            localStorage.setItem('cart', 10);
+            var teste = localStorage.getItem('cart');
+            console.log(teste);
             
             this.$getLocation()
             .then(coordinates => {
