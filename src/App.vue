@@ -1,9 +1,19 @@
 <template>
-  <div id="app" >     
+  <div id="app" class="grid-container" >     
+    <div class="d-flex justify-content-between p-3 grid-container  grid-item">
+        <div class="grid-item"></div>
+        <div class="grid-item">
+            <Temperatura/>
+        </div>
+    </div>
+    <div class="d-flex justify-content-between grid-container grid-item">
+        <div class="grid-item"></div>
+        <div class="grid-item">
+            <Notepad/>
+        </div>
+    </div>
     <!-- <Mirror/> -->
-   <Temperatura/>
   <!-- <Cripto prop-coin='BTC'/> -->
-  <Notepad/>
    
   </div>
 </template>

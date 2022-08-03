@@ -1,7 +1,7 @@
 <template>
 <div>
-    <textarea id="notepad"></textarea>
-    <button v-on:click="saveNotepadText">Salvar</button>
+    <textarea id="notepad" @change="saveNotepadText"></textarea>
+    <!-- <button v-on:click="saveNotepadText">Salvar</button> -->
 </div>
 </template>
 
