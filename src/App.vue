@@ -1,15 +1,15 @@
 <template>
-  <div id="app" class="grid-container" >     
-    <div class="d-flex justify-content-between p-3 grid-container  grid-item">
-        <div class="grid-item"></div>
-        <div class="grid-item">
+  <div id="app" class="grid-container p-4"  style="height: 100vh">     
+    <div class="d-flex  grid-container  grid-item" style="height: 50vh">
+        <div class="grid-item w-100"></div>
+        <div class="grid-item w-100 d-flex justify-content-end">
             <Temperatura/>
         </div>
     </div>
-    <div class="d-flex justify-content-between grid-container grid-item">
-        <div class="grid-item"></div>
-        <div class="grid-item">
-            <Notepad/>
+    <div class="d-flex justify-content-between grid-container grid-item" >
+        <div class="grid-item w-100"></div>
+        <div class="grid-item w-100 d-flex justify-content-end">
+            <Notepad style="height: 25vh;"/>
         </div>
     </div>
     <!-- <Mirror/> -->

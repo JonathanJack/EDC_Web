@@ -1,8 +1,5 @@
 <template>
-<div>
     <textarea id="notepad" @change="saveNotepadText"></textarea>
-    <!-- <button v-on:click="saveNotepadText">Salvar</button> -->
-</div>
 </template>
 
 <script>
